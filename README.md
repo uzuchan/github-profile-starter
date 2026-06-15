@@ -85,7 +85,7 @@ Optional: on your contribution graph, open **Contribution settings** and enable 
 
 ## Customizing
 
-- **Skills**: edit the `CATEGORIES` list in `scripts/fetch-skills.sh`, then run `bash scripts/fetch-skills.sh` again. Icon names: <https://skillicons.dev> (all lowercase).
+- **Skills**: open `ICONS.md`, check the icons you use (`- [ ]` -> `- [x]`), then run `bash scripts/fetch-skills.sh`. More icon names: <https://skillicons.dev> (all lowercase).
 - **Header tagline**: edit the text in `assets/header.svg`.
 - **Accent color**: `#6f8ff7` is used throughout — search & replace to change it.
 
@@ -98,7 +98,7 @@ Optional: on your contribution graph, open **Contribution settings** and enable 
 | Snake | Platane/snk -> `output` branch | daily |
 | Metrics | lowlighter/metrics -> `metrics.svg` | daily |
 | Contribution City (3D) | github-profile-3d-contrib | daily |
-| Skill icons | `scripts/fetch-skills.sh` -> `assets/skills-*.svg` | manual |
+| Skill icons | `ICONS.md` (checklist) -> `scripts/fetch-skills.sh` -> `assets/skills-*.svg` | manual |
 
 Workflows detect the repository owner with `${{ github.repository_owner }}`, so they target **your** data automatically. Image URLs carry a `?v=` value that the workflow bumps on each update, so the display never gets stuck on GitHub's image cache.
 
@@ -153,7 +153,7 @@ git add -A && git commit -m "set up my profile" && git push
 
 ## カスタマイズ
 
-- **使用技術（Skills）**: `scripts/fetch-skills.sh` の `CATEGORIES` を編集して `bash scripts/fetch-skills.sh` を再実行。アイコン名一覧: <https://skillicons.dev>（すべて小文字）。
+- **使用技術（Skills）**: `ICONS.md` を開いて使ったアイコンにチェック（`- [ ]` → `- [x]`）し、`bash scripts/fetch-skills.sh` を実行。アイコン名一覧: <https://skillicons.dev>（すべて小文字）。
 - **ヘッダーの肩書き**: `assets/header.svg` のテキストを編集。
 - **アクセントカラー（配色）**: 全体で `#6f8ff7` を使用 — 置換すれば色を変えられます。
 
@@ -166,7 +166,7 @@ git add -A && git commit -m "set up my profile" && git push
 | スネーク | Platane/snk → `output` ブランチ | 毎日 |
 | メトリクス | lowlighter/metrics → `metrics.svg` | 毎日 |
 | Contribution City（3D） | github-profile-3d-contrib | 毎日 |
-| 使用技術アイコン | `scripts/fetch-skills.sh` → `assets/skills-*.svg` | 手動 |
+| 使用技術アイコン | `ICONS.md`（チェックリスト）→ `scripts/fetch-skills.sh` → `assets/skills-*.svg` | 手動 |
 
 ワークフローは `${{ github.repository_owner }}` でリポジトリの持ち主を自動取得するため、**自分の**データが対象になります。画像URLの `?v=` はデータ更新時にワークフローが自動で付け替えるので、表示がGitHubの画像キャッシュで古いまま固まりません。
 
