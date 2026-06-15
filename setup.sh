@@ -4,9 +4,10 @@
 #   e.g.  ./setup.sh octocat
 #
 # What it does:
-#   1) Replace the __USERNAME__ placeholder in README / SVG / scripts with your username
-#   2) Generate the skill icons (skills-*.svg)
-#   3) Check there are no leftover placeholders
+#   1) Turn PROFILE_TEMPLATE.md into your README.md (the repo's README is just a landing page)
+#   2) Replace the __USERNAME__ placeholder in README / SVG / scripts with your username
+#   3) Generate the skill icons (skills-*.svg)
+#   4) Check there are no leftovers
 # Note: workflows (.github/workflows/*.yml) use ${{ github.repository_owner }} and
 #       need no replacement.
 set -e
@@ -18,8 +19,10 @@ if [ -z "$USER" ]; then
   exit 1
 fi
 
-echo "==> Removing the template's live-example preview block"
-perl -0pi -e 's/<!-- PREVIEW:START.*?<!-- PREVIEW:END -->\n*//s' README.md
+if [ -f PROFILE_TEMPLATE.md ]; then
+  echo "==> Using PROFILE_TEMPLATE.md as your profile README.md"
+  mv -f PROFILE_TEMPLATE.md README.md
+fi
 
 echo "==> Replacing __USERNAME__ with '$USER'"
 for f in README.md assets/header.svg assets/footer.svg scripts/generate-trophies.mjs scripts/generate-streak.mjs scripts/generate-stats.mjs; do
