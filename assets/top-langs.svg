@@ -1,0 +1,14 @@
+<svg width="330" height="195" viewBox="0 0 330 195" xmlns="http://www.w3.org/2000/svg"
+  font-family="Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-label="uzuchan's most used languages">
+  <text x="25" y="34" font-size="18" font-weight="700" fill="#6f8ff7">Most Used Languages</text>
+  <clipPath id="bar"><rect x="25" y="52" width="280" height="10" rx="5"/></clipPath>
+  <g clip-path="url(#bar)"><rect x="25.00" y="52" width="105.04" height="10" fill="#3178c6"/><rect x="130.04" y="52" width="86.13" height="10" fill="#e34c26"/><rect x="216.17" y="52" width="67.15" height="10" fill="#f1e05a"/><rect x="283.32" y="52" width="21.07" height="10" fill="#663399"/><rect x="25" y="52" width="280" height="10" fill="none"/></g>
+  <circle cx="30" cy="88" r="5.5" fill="#3178c6"/>
+  <text x="43" y="92" font-size="13" fill="#8b949e">TypeScript <tspan font-weight="700" fill="#6f8ff7">37.5%</tspan></text>
+  <circle cx="30" cy="114" r="5.5" fill="#e34c26"/>
+  <text x="43" y="118" font-size="13" fill="#8b949e">HTML <tspan font-weight="700" fill="#6f8ff7">30.8%</tspan></text>
+  <circle cx="30" cy="140" r="5.5" fill="#f1e05a"/>
+  <text x="43" y="144" font-size="13" fill="#8b949e">JavaScript <tspan font-weight="700" fill="#6f8ff7">24.0%</tspan></text>
+  <circle cx="180" cy="88" r="5.5" fill="#663399"/>
+  <text x="193" y="92" font-size="13" fill="#8b949e">CSS <tspan font-weight="700" fill="#6f8ff7">7.5%</tspan></text>
+</svg>
