@@ -1,3 +1,27 @@
+<!-- PREVIEW:START — live example shown on the template page; removed automatically by setup.sh -->
+<div align="center">
+
+## Live example / 実例
+
+A profile built with this template — see it live:
+### [github.com/uzuchan](https://github.com/uzuchan)
+
+![header](https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/header.svg)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/trophies-dark.svg">
+  <img alt="trophies" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/trophies-light.svg">
+</picture>
+
+<img height="160" alt="stats" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/stats.svg">
+<img height="160" alt="top languages" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/top-langs.svg">
+
+</div>
+
+---
+
+<!-- PREVIEW:END -->
+
 <!--
 ==================================================================
   GitHub Profile README starter  /  プロフィール README テンプレート
