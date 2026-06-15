@@ -18,6 +18,9 @@ if [ -z "$USER" ]; then
   exit 1
 fi
 
+echo "==> Removing the template's live-example preview block"
+perl -0pi -e 's/<!-- PREVIEW:START.*?<!-- PREVIEW:END -->\n*//s' README.md
+
 echo "==> Replacing __USERNAME__ with '$USER'"
 for f in README.md assets/header.svg assets/footer.svg scripts/generate-trophies.mjs scripts/generate-streak.mjs scripts/generate-stats.mjs; do
   [ -f "$f" ] && perl -pi -e "s/__USERNAME__/$USER/g" "$f"
@@ -26,9 +29,9 @@ done
 echo "==> Generating skill icons"
 bash scripts/fetch-skills.sh || echo "(run later with internet: bash scripts/fetch-skills.sh)"
 
-echo "==> Checking for leftover placeholders"
-if grep -rn '__USERNAME__' README.md assets scripts 2>/dev/null; then
-  echo "!! Placeholders remain above. Please check."
+echo "==> Checking for leftover placeholders / example references"
+if grep -rn -e '__USERNAME__' -e 'uzuchan' README.md assets scripts 2>/dev/null; then
+  echo "!! Something above still references the placeholder or the example account. Please check."
 else
   echo "OK no leftovers"
 fi
