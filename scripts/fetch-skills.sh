@@ -1,34 +1,47 @@
 #!/usr/bin/env bash
-# Generate the skill icon strips (assets/skills-*-{dark,light}.svg) from skillicons.dev
-# and self-host them in your repo. We self-host (instead of linking skillicons.dev
-# directly) so GitHub's image proxy (camo) cannot cache a broken/partial response.
+# Generate the skill icon strips from ICONS.md.
+# For each category section in ICONS.md, the checked (- [x]) icons are fetched from
+# skillicons.dev and saved to assets/skills-<category>-{dark,light}.svg (self-hosted,
+# so GitHub's image proxy cannot cache a broken response).
 #
-# To change your tech stack, edit the CATEGORIES below and re-run this script.
-# Icon name list: https://skillicons.dev  (all lowercase)
+# To customize: open ICONS.md, check/uncheck icons, then run `bash scripts/fetch-skills.sh`.
 set -e
 cd "$(dirname "$0")/.."
 
-# "category|icons(comma-separated)" — keep these in sync with the README Skills section.
-CATEGORIES=(
-  "languages|js,ts,html,css,python"
-  "frameworks|react,nodejs,vite,tailwind"
-  "tools|git,github,docker,vscode"
+# "ICONS.md heading | output file key"  (key must match the README references)
+SECTIONS=(
+  "Languages|languages"
+  "Frameworks & Libraries|frameworks"
+  "Tools|tools"
 )
 
+# Print the checked icon names under a given "## <heading>" section of ICONS.md.
+extract() {
+  awk -v h="## $1" '
+    $0 == h { inq = 1; next }
+    /^## / { inq = 0 }
+    inq && /^- \[[xX]\] \*\*/ {
+      s = $0
+      sub(/^- \[[xX]\] \*\*/, "", s)   # strip the checkbox + opening **
+      sub(/\*\*.*/, "", s)             # strip the closing ** and any description
+      print s
+    }
+  ' ICONS.md
+}
+
 mkdir -p assets
-for entry in "${CATEGORIES[@]}"; do
-  cat="${entry%%|*}"; icons="${entry##*|}"
-  n=$(echo "$icons" | tr ',' '\n' | grep -c .)
-  want=$(( n * 256 + (n - 1) * 44 ))   # skillicons viewBox width derived from icon count
+any=0
+for sec in "${SECTIONS[@]}"; do
+  heading="${sec%%|*}"; key="${sec##*|}"
+  icons=$(extract "$heading" | paste -sd, -)
+  if [ -z "$icons" ]; then
+    echo "skip $key (no icons checked under '## $heading')"
+    continue
+  fi
+  any=1
+  echo "$key: $icons"
   for theme in dark light; do
-    f="assets/skills-$cat-$theme.svg"
-    curl -s "https://skillicons.dev/icons?i=$icons&theme=$theme" -o "$f"
-    got=$(grep -oE 'viewBox="[^"]*"' "$f" | head -1 | grep -oE '[0-9]+ 256' | grep -oE '^[0-9]+')
-    if [ "$got" = "$want" ]; then
-      echo "OK  $f ($icons)"
-    else
-      echo "NG  $f : viewBox width $got != expected $want. Check the icon names."
-    fi
+    curl -s "https://skillicons.dev/icons?i=$icons&theme=$theme" -o "assets/skills-$key-$theme.svg"
   done
 done
-echo "Done. The README Skills section references assets/skills-*-*.svg."
+[ "$any" = 1 ] && echo "Done. Edit ICONS.md and re-run to change your skills." || echo "Nothing checked in ICONS.md."
