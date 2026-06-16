@@ -25,12 +25,12 @@ A real profile built with this template — このテンプレートで作った
 ![header](https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/header.svg)
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/trophies-dark.svg?v=1781544519">
-  <img alt="trophies" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/trophies-light.svg?v=1781544519">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/trophies-dark.svg?v=1781588294">
+  <img alt="trophies" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/trophies-light.svg?v=1781588294">
 </picture>
 
-<img height="160" alt="stats" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/stats.svg?v=1781544519">
-<img height="160" alt="top languages" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/top-langs.svg?v=1781544519">
+<img height="160" alt="stats" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/stats.svg?v=1781588294">
+<img height="160" alt="top languages" src="https://raw.githubusercontent.com/uzuchan/uzuchan/main/assets/top-langs.svg?v=1781588294">
 
 </div>
 
