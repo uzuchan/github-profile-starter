@@ -1,6 +1,6 @@
 <svg width="495" height="165" viewBox="0 0 495 165"
   xmlns="http://www.w3.org/2000/svg" role="img"
-  aria-label="uzuchan's contribution streak: current 7 days, longest 7 days, total 387">
+  aria-label="uzuchan's contribution streak: current 7 days, longest 7 days, total 388">
   <style>
     text { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; }
     .num { font-size: 28px; font-weight: 800; }
@@ -13,7 +13,7 @@
   <line x1="330" y1="28" x2="330" y2="137" stroke="#8b949e" stroke-opacity="0.3" stroke-width="1"/>
 
   <!-- Total Contributions -->
-  <text class="num" x="89.1" y="62" text-anchor="middle" fill="#6f8ff7">387</text>
+  <text class="num" x="89.1" y="62" text-anchor="middle" fill="#6f8ff7">388</text>
   <text class="label" x="89.1" y="98" text-anchor="middle" fill="#8b949e">Total Contributions</text>
   <text class="sub" x="89.1" y="120" text-anchor="middle" fill="#8b949e">May 31, 2026 - Present</text>
 
